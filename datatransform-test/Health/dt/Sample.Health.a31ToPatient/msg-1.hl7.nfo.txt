@@ -1,0 +1,1 @@
+Simple HL7 A31 message

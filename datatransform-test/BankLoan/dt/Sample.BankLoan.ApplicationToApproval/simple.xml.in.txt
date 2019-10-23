@@ -1,0 +1,7 @@
+<Application>
+  <Name>SRC1</Name>
+  <TaxID>521</TaxID>
+  <Nationality></Nationality>
+  <BusinessOperationType></BusinessOperationType>
+  <Destination></Destination>
+</Application>

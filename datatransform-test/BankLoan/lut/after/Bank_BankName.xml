@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2019.3 (Build 309U)" ts="2019-10-21 07:37:54">
+<Document name="Bank.BankName.LUT">
+<lookupTable>
+<entry table="Bank.BankName" key="SRC1">ALLSBANK</entry>
+<entry table="Bank.BankName" key="source2">Investments Bank</entry>
+</lookupTable>
+</Document></Export>

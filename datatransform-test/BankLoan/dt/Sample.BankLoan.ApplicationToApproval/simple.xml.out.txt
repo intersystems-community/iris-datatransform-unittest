@@ -1,0 +1,5 @@
+<Approval>
+  <BankName>ALLSBANK TEST</BankName>
+  <IsApproved>false</IsApproved>
+  <InterestRate>.521</InterestRate>
+</Approval>

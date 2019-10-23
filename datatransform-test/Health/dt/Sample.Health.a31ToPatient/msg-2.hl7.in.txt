@@ -1,0 +1,5 @@
+MSH|^~\&|HIS|01001|SAVAC|01001|20191022120333||ADT^A31^ADT_A05|14123386|P|2.7|||AL|NE||8859/1
+EVN|A31|20191022120328|||admin^^^^^^^^^^^^LR^^^admin
+PID|1||3241234^^^^PI~44444444N^^^MI^NNESP^^^^ESP&&ISO3166~11/88990033-66^^^SS^SS^^^^ESP&&ISO3166||RAMIREZ^SARA^GISPERT|GISPERT|19640404000000|F|||&CAMINO LARGO, 16 3 1&^####^DESCONOCIDA^^^^^||^PRN^PH^^^^^^^^^~^ORN^PH^^^^^^^^^~^PRS^CP^^^^^^^^^~^PRN^Internet^|^PRS^CP|1|||||||||||||||N||||||||||^PRN^PH^^^^^^^^^~^ORN^PH^^^^^^^^^~^PRS^CP^^^^^^^^^^^^^~^PRN^Internet^
+PD1|||^^^^^^FI^^^~^^^^^^XX^^^|
+PV1|1|N
