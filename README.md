@@ -46,5 +46,5 @@ In your test directory you can have:
 * `<DataTransformClassName>/<name>.nfo.txt` **optional** simple info message you want to appear during the text execution.
 
 In case you are getting an error while running the test you will get:
-* `<DataTransformClassName>/<name>.gen.txt` **required** actual output of the data transform for the given input. You can compare this file Vs. the expected output to see what's wrong.
+* `<DataTransformClassName>/<name>.gen.txt` actual output of the data transform for the given input. You can compare this file Vs. the expected output to see what's wrong.
 
