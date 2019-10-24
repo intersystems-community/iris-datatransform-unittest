@@ -25,6 +25,7 @@ RUN iris start iris && \
     do $system.OBJ.Load("/tmp/app/src/UnitTestHelper/Installer.cls","c")\n \
     do ##class(UnitTestHelper.Installer).Run()\n \
     zn "%%SYS"\n \
+    Do ##class(Security.Users).UnExpireUserPasswords("*")\n \      
     do ##class(SYS.Container).QuiesceForBundling()\n \
     h\n' | irissession IRIS \
 && iris stop iris quietly  
