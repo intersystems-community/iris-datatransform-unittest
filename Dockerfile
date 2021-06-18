@@ -22,12 +22,13 @@ RUN chown -R ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /app
 USER irisowner
 
 # install application
+# quiesce.. resets UnExpire....!  changed sequence ;rcc
 RUN iris start iris && \
     printf 'zn "USER" \n \
     do $system.OBJ.Load("/tmp/app/src/UnitTestHelper/Installer.cls","c")\n \
     do ##class(UnitTestHelper.Installer).Run()\n \
     zn "%%SYS"\n \
-    Do ##class(Security.Users).UnExpireUserPasswords("*")\n \      
     do ##class(SYS.Container).QuiesceForBundling()\n \
+    Do ##class(Security.Users).UnExpireUserPasswords("*")\n \      
     h\n' | irissession IRIS \
 && iris stop iris quietly  
