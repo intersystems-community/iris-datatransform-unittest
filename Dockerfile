@@ -1,7 +1,12 @@
-FROM store/intersystems/irishealth:2019.3.0.308.0-community
+# FROM store/intersystems/irishealth:2019.3.0.308.0-community
+ARG IMAGE=intersystemsdc/irishealth-community:2021.1.0.215.0-zpm
+FROM $IMAGE
 
 # root user to set up environment USER root
 USER root
+COPY irissession.sh /
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /irissession.sh
+RUN chmod u+x /irissession.sh
 
 # external dependencies (e.g. apt-get) 
 
@@ -20,12 +25,15 @@ RUN chown -R ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /app
 USER irisowner
 
 # install application
-RUN iris start iris && \
-    printf 'zn "USER" \n \
-    do $system.OBJ.Load("/tmp/app/src/UnitTestHelper/Installer.cls","c")\n \
-    do ##class(UnitTestHelper.Installer).Run()\n \
-    zn "%%SYS"\n \
-    Do ##class(Security.Users).UnExpireUserPasswords("*")\n \      
-    do ##class(SYS.Container).QuiesceForBundling()\n \
-    h\n' | irissession IRIS \
-&& iris stop iris quietly  
+SHELL ["/irissession.sh"]
+RUN \
+  # install code
+  do $system.OBJ.Load("/tmp/app/src/UnitTestHelper/Installer.cls","c") \
+  set sc = ##class(UnitTestHelper.Installer).Run() \
+  # install zpm
+  zn "APP" \
+  zpm "install webterminal"
+
+# bringing the standard shell back
+SHELL ["/bin/bash", "-c"]
+CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
