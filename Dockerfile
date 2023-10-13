@@ -1,5 +1,4 @@
-# FROM store/intersystems/irishealth:2019.3.0.308.0-community
-ARG IMAGE=intersystemsdc/irishealth-community:2021.1.0.215.0-zpm
+ARG IMAGE=intersystemsdc/irishealth-community
 FROM $IMAGE
 
 # root user to set up environment USER root
