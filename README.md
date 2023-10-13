@@ -9,7 +9,6 @@ Simple unit tests for data transforms in InterSystems IRIS using external files.
     ```
 
 2. Enter [IRIS Management Portal](http://localhost:52773/csp/sys/UtilHome.csp) using `superuser` / `SYS` account.
-Change the default password.
 
 3. Open a [WebTerminal session](http://localhost:52773/terminal/) and run the tests:
     ```
